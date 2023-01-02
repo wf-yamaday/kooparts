@@ -17,7 +17,14 @@ data class TestJobResult(
     val name: String,
     val passed: Boolean,
     val stepResults: List<StepResult>
-)
+) {
+    
+    fun countFailedStep(): Int {
+        return this.stepResults.filterNot{
+            it.passed
+        }.size
+    }
+}
 
 data class WorkflowResult(
     val name: String,
