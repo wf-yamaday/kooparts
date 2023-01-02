@@ -1,5 +1,7 @@
 package org.kooparts.core
 
+import io.ktor.http.HttpMethod
+
 /**
  * The mapping class for Workflow file
  */
@@ -53,7 +55,7 @@ data class HTTPStep(
     /**
      * The HTTP request method
      */
-    val method: String,
+    val method: HttpMethod,
 
     /**
      * The check is an object that checks the success of a step.

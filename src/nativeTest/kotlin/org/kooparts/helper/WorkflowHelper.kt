@@ -1,5 +1,6 @@
 package org.kooparts.helper
 
+import io.ktor.http.HttpMethod
 import org.kooparts.core.HTTPStep
 import org.kooparts.core.HTTPStepCheck
 import org.kooparts.core.Step
@@ -18,7 +19,7 @@ fun httpStepFactory(
     check: HTTPStepCheck = httpStepCheckFactory()
 ): HTTPStep = HTTPStep(
     url = url,
-    method = method,
+    method = HttpMethod(method),
     check = check
 )
 
