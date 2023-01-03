@@ -9,6 +9,7 @@ import org.kooparts.core.HTTPStepResult
 import org.kooparts.helper.httpStepCheckFactory
 import org.kooparts.helper.httpStepFactory
 import kotlin.test.Test
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class HttpStepRunnerTest {
@@ -32,10 +33,23 @@ class HttpStepRunnerTest {
             respondBadRequest()
         }
         val client = HttpClient(mockEngine)
-        val httpStep = httpStepFactory(check = httpStepCheckFactory(status = "400"))
+        val httpStep = httpStepFactory(check = httpStepCheckFactory(status = "400"), method = "POST")
 
         val result: HTTPStepResult = run(httpStep = httpStep, client = client)
 
         assertTrue(result.status.passed)
+    }
+
+    @Test
+    fun testRunWithIncorrectStatus() = runBlocking {
+        val mockEngine = MockEngine {
+            respondBadRequest()
+        }
+        val client = HttpClient(mockEngine)
+        val httpStep = httpStepFactory(check = httpStepCheckFactory(status = "200"), method = "POST")
+
+        val result: HTTPStepResult = run(httpStep = httpStep, client = client)
+
+        assertFalse(result.status.passed)
     }
 }
