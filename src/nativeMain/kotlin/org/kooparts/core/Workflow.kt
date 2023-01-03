@@ -1,10 +1,11 @@
 package org.kooparts.core
 
-import io.ktor.http.HttpMethod
+import kotlinx.serialization.Serializable
 
 /**
  * The mapping class for Workflow file
  */
+@Serializable
 data class Workflow(
     /**
      * The workflow name
@@ -22,6 +23,7 @@ data class Workflow(
     val testJobs: List<TestJob> = emptyList()
 )
 
+@Serializable
 data class TestJob(
     /**
      * The test job name
@@ -34,6 +36,7 @@ data class TestJob(
     val steps: List<Step> = emptyList()
 )
 
+@Serializable
 data class Step(
     /**
      * The step name
@@ -46,6 +49,7 @@ data class Step(
     val http: HTTPStep?
 )
 
+@Serializable
 data class HTTPStep(
     /**
      * URL
@@ -55,7 +59,7 @@ data class HTTPStep(
     /**
      * The HTTP request method
      */
-    val method: HttpMethod,
+    val method: String,
 
     /**
      * The check is an object that checks the success of a step.
@@ -63,6 +67,7 @@ data class HTTPStep(
     val check: HTTPStepCheck
 )
 
+@Serializable
 data class HTTPStepCheck(
     /**
      * The HTTP Status Code

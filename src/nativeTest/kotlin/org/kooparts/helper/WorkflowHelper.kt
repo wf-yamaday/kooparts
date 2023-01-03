@@ -19,7 +19,7 @@ fun httpStepFactory(
     check: HTTPStepCheck = httpStepCheckFactory()
 ): HTTPStep = HTTPStep(
     url = url,
-    method = HttpMethod(method),
+    method = method,
     check = check
 )
 
