@@ -1,5 +1,6 @@
 package org.kooparts.core
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
@@ -20,6 +21,7 @@ data class Workflow(
     /**
      * The test jobs included in the workflow
      */
+    @SerialName("tests")
     val testJobs: List<TestJob> = emptyList()
 )
 
