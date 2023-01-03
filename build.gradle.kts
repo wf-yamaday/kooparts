@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.7.21"
+    kotlin("plugin.serialization") version "1.7.21"
 }
 
 group = "org.kooparts"
@@ -33,6 +34,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-curl:$ktorVersion")
                 implementation("io.ktor:ktor-client-cio:$ktorVersion")
+                implementation("net.mamoe.yamlkt:yamlkt:0.12.0")
             }
         }
         val commonTest by getting {
