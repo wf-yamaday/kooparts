@@ -2,7 +2,6 @@ package org.kooparts.core.runner
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.engine.HttpClientEngineFactory
 import io.ktor.client.engine.curl.Curl
 import io.ktor.utils.io.core.use
 import kotlinx.coroutines.runBlocking
