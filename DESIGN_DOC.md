@@ -29,16 +29,13 @@ These components are inspired by GitHub actions.
   Step is modularity.
 
 ```mermaid
----
-title: High Level Architecture Design
----
 flowchart LR
    wf[Workflow]
    job1[Test Job: Auth and Fetch Test]
    job2[Test Job: Health Check Test]
    step1[Step: Authentication]
    step2[Step: Fetch Resource]
-   step3[Step: GET /helth]
+   step3[Step: GET /health]
 
 
   wf --> job1 & job2
