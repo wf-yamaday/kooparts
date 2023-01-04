@@ -1,6 +1,6 @@
-# kooparts
+# Kooparts
 
-kooparts is REST API testing tool.
+Kooparts is REST API testing tool.
 
 # Sample
 
@@ -21,7 +21,7 @@ tests:
 
 # Dependency
 
-kooparts depend on following libraries.
+Kooparts depend on following libraries.
 
 - [Ktor Client](https://ktor.io/docs/welcome.html)
 - [yamlkt](https://github.com/Him188/yamlkt)
