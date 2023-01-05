@@ -6,7 +6,7 @@ Kooparts provide easy way to test WebAPI.
 
 ## Background
 
-Kotlin/Native is a technology for compiling Kotlin code to native binaries which can run without a virtual machine.
+Kotlin/Native is a technology for compiling Kotlin code to native binaries which can run without a virtual machine.  
 It is ideal for situations when a developer needs to produce a self-contained program that does not require an additional runtime or virtual machine.
 
 Kotlin/native is a technology full of possibilities.  
@@ -15,7 +15,7 @@ We believe that Kotlin/native allows us to develop a self-contained, easy-to-exe
 ## High Level Architecture Design
 
 Kooparts is composed of three core components.  
-These components are inspired by GitHub actions.
+These components are inspired by GitHub Actions.
 
 - Workflow  
   A workflow is the root component of an automated process.
@@ -29,16 +29,13 @@ These components are inspired by GitHub actions.
   Step is modularity.
 
 ```mermaid
----
-title: High Level Architecture Design
----
 flowchart LR
    wf[Workflow]
    job1[Test Job: Auth and Fetch Test]
    job2[Test Job: Health Check Test]
    step1[Step: Authentication]
    step2[Step: Fetch Resource]
-   step3[Step: GET /helth]
+   step3[Step: GET /health]
 
 
   wf --> job1 & job2
