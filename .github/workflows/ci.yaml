@@ -6,7 +6,7 @@ on:
     paths:
       - '.github/workflows/ci.yaml'
       - 'src/**'
-      - ' build.gradle.kts'
+      - 'build.gradle.kts'
 
 permissions:
   checks: write
