@@ -31,6 +31,7 @@ kotlin {
         val ktorVersion = "2.2.1"
         val commonMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.5")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-curl:$ktorVersion")
                 implementation("io.ktor:ktor-client-cio:$ktorVersion")
